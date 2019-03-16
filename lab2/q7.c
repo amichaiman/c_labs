@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 
-#define N 7
+#define N (7)
 
 int main() {
     srand(time(0));

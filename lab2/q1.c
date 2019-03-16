@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#define MOD_VAL 7
+#define MOD_VAL (7)
 
 int main() {
     int n;
