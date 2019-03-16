@@ -1,15 +1,16 @@
 #include <stdio.h>
-#define MAX_NUMBER (1000)
-#define MIN_NUMBER (1)
-#define DIFFERENCE (3)
+#include <math.h>
+#define MOD_VAL 7
 
 int main() {
-    int cur_num = MAX_NUMBER;
+    int n;
 
-    while (cur_num >= MIN_NUMBER) {
-        printf("%d ", cur_num);
-        cur_num -= DIFFERENCE;
-    }
+    printf("Enter number:\n");
+    scanf("%d", &n);
+
+    printf("%d^2=%g\n",n, pow(n,2));
+    printf("sqrt(%d)=%g\n",n, sqrt(n));
+    printf("%d%%%d=%d\n",n, MOD_VAL, n%MOD_VAL);
 
     return 0;
 }

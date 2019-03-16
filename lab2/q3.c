@@ -1,16 +1,19 @@
 #include <stdio.h>
+#define D  (2)
+#define A1 (1)
 
 int main() {
-    int n, cur_line=1;
-    printf("Enter height:\n");
+    int n, a = A1, sum = 0;
+
+    printf("Enter n value:\n");
     scanf("%d", &n);
 
     while (n--) {
-        printf("%d\n", cur_line);
-        /* add a "1" on the right of current number */
-        cur_line *= 10;
-        cur_line += 1;
+        sum += a;
+        a   += D;
     }
+
+    printf("Sum of series: %d\n", sum);
 
     return 0;
 }

@@ -1,19 +1,16 @@
 #include <stdio.h>
-#define D  (2)
-#define A1 (1)
+#define MAX_NUMBER (1000)
+#define MIN_NUMBER (1)
+#define DIFFERENCE (3)
 
 int main() {
-    int n, a = A1, sum = 0;
+    int cur_num = MAX_NUMBER;
 
-    printf("Enter n value:\n");
-    scanf("%d", &n);
-
-    while (n--) {
-        sum += a;
-        a   += D;
+    while (cur_num >= MIN_NUMBER) {
+        printf("%d ", cur_num);
+        cur_num -= DIFFERENCE;
     }
-
-    printf("Sum of series: %d\n", sum);
 
     return 0;
 }
+

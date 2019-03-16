@@ -1,23 +1,54 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define MAX_VALUE (1000)
 
 int main() {
-    int n;
-    int num_of_trys=0;
+    int i; //loop index
+    int height;
+    int line; //current line in piramide
 
-    srand(time(0));
+    printf("Enter piramid height:\n");
+    scanf("%d", &height);
 
-    printf("Enter number between 1 and %d\n", MAX_VALUE);
-    scanf("%d", &n);
-
-    while ((rand()%MAX_VALUE + 1) != n) {
-        num_of_trys++;
+    /* print first line of piramide in correct offset */
+    i=0;
+    while (i < height-1) {
+        printf(" ");
+        i++;
     }
+    printf("*\n");
 
-    printf("It took %d random numbers to get to your choice!\n", num_of_trys);
+    /* print lines 2 up to (height-1) */
+    line = 1;
+    while (line < height-1) {
+        /* print spaces to get to correct offset */
+        i=0;
+        while (i < (height-line-1)) {
+            printf(" ");
+            i++;
+        }
+
+        /* right side of piramide */
+        printf("*");
+
+        /* print dollars in piramide */
+        i=0;
+        while (i < (line*2 - 1)) {
+            printf("$");
+            i++;
+        }
+
+        /* left side of piramide */
+        printf("*\n");
+
+        line++;
+    }
+    /* print base of piramide */
+    i=0;
+    while (i < (height*2 - 1)) {
+        printf("*");
+        i++;
+    }
+    printf("\n");
+
     return 0;
 }
 
