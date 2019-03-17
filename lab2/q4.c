@@ -1,16 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int n, cur_line=1;
-    printf("Enter height:\n");
-    scanf("%d", &n);
 
-    while (n--) {
-        printf("%d\n", cur_line);
-        /* add a "1" on the right of current number */
-        cur_line *= 10;
-        cur_line += 1;
-    }
+    printf("   variable  |  size in bytes\n");
+    printf("-------------+-----------------\n");
+    printf("char         |       %zu\n",sizeof(char));
+    printf("short        |       %zu\n",sizeof(short));
+    printf("int          |       %zu\n",sizeof(int));
+    printf("long         |       %zu\n",sizeof(long));
+    printf("float        |       %zu\n",sizeof(float));
+    printf("double       |       %zu\n",sizeof(double));
 
     return 0;
 }
