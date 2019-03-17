@@ -1,16 +1,12 @@
 #include <stdio.h>
-#include <math.h>
-#define MOD_VAL (7)
+#define THIS_YEAR 2019
 
 int main() {
-    int n;
+    int age;
 
-    printf("Enter number:\n");
-    scanf("%d", &n);
-
-    printf("%d^2=%g\n",n, pow(n,2));
-    printf("sqrt(%d)=%g\n",n, sqrt(n));
-    printf("%d%%%d=%d\n",n, MOD_VAL, n%MOD_VAL);
+    printf("enter age: ");
+    scanf("%d", &age);
+    printf("birth year: %d\n", THIS_YEAR-age);
 
     return 0;
 }

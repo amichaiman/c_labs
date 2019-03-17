@@ -1,19 +1,12 @@
 #include <stdio.h>
-#define D  (2)
-#define A1 (1)
+#define DOLLAR_IN_SHEKEL 3.7
 
 int main() {
-    int n, a = A1, sum = 0;
+    float dollars;
 
-    printf("Enter n value:\n");
-    scanf("%d", &n);
-
-    while (n--) {
-        sum += a;
-        a   += D;
-    }
-
-    printf("Sum of series: %d\n", sum);
+    printf("Enter amount in dollars:\n");
+    scanf("%f", &dollars);
+    printf("amount of %g in shekels is %g\n", dollars, dollars*DOLLAR_IN_SHEKEL);
 
     return 0;
 }

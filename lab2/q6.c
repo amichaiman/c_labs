@@ -1,23 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define MAX_VALUE (1000)
 
 int main() {
-    int n;
-    int num_of_trys=0;
+    int a,b;
+    printf("enter a:\n");
+    scanf("%d", &a);
 
-    srand(time(0));
+    printf("enter b:\n");
+    scanf("%d", &b);
 
-    printf("Enter number between 1 and %d\n", MAX_VALUE);
-    scanf("%d", &n);
-
-    while ((rand()%MAX_VALUE + 1) != n) {
-        num_of_trys++;
-    }
-
-    printf("It took %d random numbers to get to your choice!\n", num_of_trys);
+    printf("%d mod %d = %d\n", a, b, a%b);
     return 0;
 }
-

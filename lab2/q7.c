@@ -1,20 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <math.h>
-
-#define N (7)
 
 int main() {
-    srand(time(0));
-    int rand_val;
+    int points_course_a, points_course_b, grade_course_a, grade_course_b;
 
-    do {
-        rand_val = rand();
-    } while(((int)pow(rand_val,2))%N != ((int)sqrt(rand_val))%N);
+    printf("Enter number of points for course a:\n");
+    scanf("%d", &points_course_a);
+    printf("Enter number of points for course b:\n");
+    scanf("%d", &points_course_b);
+    printf("Enter grade for course a:\n");
+    scanf("%d", &grade_course_a);
+    printf("Enter grade for course b:\n");
+    scanf("%d", &grade_course_b);
 
-    printf("%d is a tel-hai number!\n", rand_val);
-
+    printf("Average grade is %g\n", (points_course_a*grade_course_a + points_course_b*grade_course_b)
+                                    /(float)(points_course_a+points_course_b));
     return 0;
 }
-
