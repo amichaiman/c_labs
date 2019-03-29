@@ -32,13 +32,21 @@ void print_primes(int n) {
         i++;
     }
 }
+
+int is_valid(int n) {
+    return n > 0;
+}
 int main() {
     int input;
 
     printf("Enter number:\n");
     scanf("%d", &input);
 
-    print_primes(input);
+    if (is_valid(input)) {
+        print_primes(input);
+    } else {
+        printf("Invalid input.\n");
+    }
     return 0;
 }
 
