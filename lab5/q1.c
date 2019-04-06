@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* returns the given number's "opposite"
+ * the "opposite" of a number is defined as the same
+ * number where the order of the digits is a mirror of the original */
 int flip_numbers(int n) {
     int res;
 
-    for (res=0; n > 0; n/=10) {
-        res *= 10;
-        res += n%10;
+    for (res=0; n > 0; n/=10 /*trim last digit*/) {
+        res *= 10;   //make room for new digit
+        res += n%10; //take last digit from n
     }
 
     return res;
 }
 
+/* returns 1 if argument is greater or equal to 0. 0 otherwise */
 int is_valid_input(int n) {
     return n >= 0;
 }
