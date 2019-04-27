@@ -6,6 +6,7 @@ void print_latin_triangle(char c) {
 
     if (!isalpha(c)) {
         printf("Invalid character.\n");
+        return;
     }
 
     for (i=0; i<=tolower(c)-'a'; i++) {
