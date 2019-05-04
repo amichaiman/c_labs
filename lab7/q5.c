@@ -1,20 +1,16 @@
 #include <stdio.h>
 
 void print_array(int a[], int size); /* prints array to stdout */
-int remove_dups(int a[], int size); /* sorts array and removes duplicates. return value is new array size */
+int num_unique(int a[], int size); /* returns number of unique numbers in arrray */
 
 int main() {
     int a[] = {1, 5, 5, 1, 4, 5, 6};
     int size_after_removing_dups;
 
-    puts("before:");
+    printf("array:");
     print_array(a, sizeof(a)/sizeof(a[0]));
 
-    size_after_removing_dups = remove_dups(a, sizeof(a)/sizeof(a[0]));
-
-    puts("after:");
-    print_array(a, size_after_removing_dups);
-
+    printf("number of unique numbers: %d\n", num_unique(a, sizeof(a)/sizeof(a[0])));
     return 0;
 }
 
@@ -73,3 +69,14 @@ int remove_dups(int a[], int size) {
     return size;
 }
 
+/* returns number of unique numbers in arrray */
+int num_unique(int a[], int size) {
+    int copy_a[size], i;
+
+    /* create copy of the array */
+    for (i=0; i<size; i++) {
+        copy_a[i] = a[i];
+    }
+
+    return remove_dups(copy_a, size);
+}
