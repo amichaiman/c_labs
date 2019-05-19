@@ -17,7 +17,7 @@ char* my_strstr(char* str1, char* str2) {
     for (i=0; i<strlen(str1)-strlen(str2); i++) {
         /* if current character is equal to first character of str2,
          * check if the next strlen(str2) characters are equal in both strings */
-        if ((str1[i] == str2[0]) && strings_are_similar(str1+i, str2, strlen(str2))) {
+        if (strings_are_similar(str1+i, str2, strlen(str2))) {
             return str1+i;
         }
     }
