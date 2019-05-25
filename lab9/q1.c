@@ -1,17 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-void print_num_to_one(int n) {
-    if (n <= 0) {
-        return;
+/* prints array to stdout */
+void print_array(int *a, int size) {
+    int i;
+
+    for (i=0; i<size; i++) {
+        printf("%3d", a[i]);
     }
-    printf("%d ", n);
-    print_one_to_num(n-1);
+    putchar('\n');
+}
+
+/* allocate array, and fill it with random numbers in given range */
+int* create_random_array(int min, int max, int size) {
+    int i;
+    int* arr = (int*) malloc (size*sizeof(int));
+
+    for (i=0; i<size; i++) {
+        arr[i] = rand()%(max-min+1) + min;
+    }
+    return arr;
 }
 
 int main() {
-    int n = 15;
-    printf("printing values for n=%d\n", n);
-    print_one_to_num(n);
+    srand(time(NULL));
+
+    int min=0, max=10, size=10;
+    int* arr = create_random_array(min, max, size);
+
+    print_array(arr, size);
+
+    free(arr);
     return 0;
 }
 

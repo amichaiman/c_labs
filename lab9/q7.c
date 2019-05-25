@@ -1,18 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int biggest_digit(int n) {
-    if (n <= 0) {
-        return 0;
-    }
-    int current_biggest_digit = biggest_digit(n/10);
+/* splits string at given index. return value is second half of string */
+char* split_array(char* str, int split_index) {
+    /* allocate memory for second half (+1 for NULL terminator) */
+    char* second_half = (char*) malloc((strlen(str+split_index)+1)*sizeof(char));
 
-    return n%10 > current_biggest_digit ? n%10 : current_biggest_digit;
+    /* copy second half to allocated memory */
+    strcpy(second_half, str+split_index);
+    /* shorten str1 to correct len */
+    str[split_index] = '\0';
+
+    return second_half;
 }
 
 int main() {
-    int n = 16347293;
+    char str[] = "Hi! i came from the zoo!";
+    char* second_half;
+    int split_index = 12;
 
-    printf("The biggest digit in %d is %d\n", n, biggest_digit(n));
+    printf("Splitting the string \"%s\" at index %d\n", str, split_index);
+    second_half = split_array(str, split_index);
+
+    puts("Done. First half:");
+    printf("\"%s\"\n", str);
+    puts("Second half:");
+    printf("\"%s\"\n", second_half);
+
+    free(second_half);
     return 0;
 }
-
