@@ -1,24 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-/* returns 1 if strings are similar in the first n characters */
-int strings_are_similar(char* str1, char* str2, int n) {
-    int i;
-    for (i=0; i<n; i++) {
-        if (str1[i] != str2[i]) {
-            return 0;
-        }
+#define MAX_RAND (1000)
+
+int is_devided_by_three(int n) {
+    if (n < 0) {
+        return 0;
     }
-    return 1;
+    if (n == 0) {
+        return 1;
+    }
+    return is_devided_by_three(n-3);
 }
 
 int main() {
-    char str1[] = "hello i am here";
-    char str2[] = "hello you are here";
+    int i, n;
+    srand(time(NULL));
 
-
-    printf("The strings:\n\"%s\"\n\"%s\"\nare%s similar in the first %d characters\n",
-            str1, str2, strings_are_similar(str1, str2, 5) ? "" : "n't", 5);
-
+    for (i=0; i<5; i++) {
+        n = rand()%MAX_RAND;
+        printf("The number %d is%s devided by 3\n", n, is_devided_by_three(n) ? "" : "n't");
+    }
     return 0;
 }
 

@@ -1,18 +1,17 @@
 #include <stdio.h>
 
-/* returns length in characters of given string */
-int my_strlen(char* str) {
-    int len=0;
-
-    /* while null character isn't reached */
-    while (*(str++)) {
-        len++;
+void print_one_to_num(int n) {
+    if (n <= 0) {
+        return;
     }
-    return len;
+    print_one_to_num(n-1);
+    printf("%d ", n);
 }
 
 int main() {
-    char str[] = "hello, how are you?";
-    printf("\"%s\" is %d characters long\n", str, my_strlen(str));
+    int n = 15;
+    printf("printing values for n=%d\n", n);
+    print_one_to_num(n);
     return 0;
 }
+

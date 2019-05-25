@@ -1,27 +1,16 @@
 #include <stdio.h>
 
-char* my_strchr(char* str, char c) {
-    while (*str) { //while we haven't reached NULL terminator
-        if (*str == c) {
-            return str;
-        }
-        str++;
+int digit_sum(int n) {
+    if (n <= 0) {
+        return 0;
     }
-    return NULL;
+    return n%10 + digit_sum(n/10);
 }
 
 int main() {
-    char str[] = "hello, how are you?";
-    char char_to_find = 'a';
-    char* char_location;
+    int n = 1234;
 
-    char_location = my_strchr(str, char_to_find);
-
-    if (char_location) {
-        printf("The character \"%c\" is in the string \"%s\" at index %ld \n", char_to_find, str, char_location-str);
-    } else {
-        printf("The character \"%c\" isn't in the string \"%s\"\n", char_to_find, str);
-    }
+    printf("digit sum of %d is %d\n", n, digit_sum(n));
     return 0;
 }
 
