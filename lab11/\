@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+#define TRUE  (1)
+#define FALSE (0)
+
+int is_prime(int n) {
+    int i, sqrt_n;
+
+    if (n == 2) {
+        return TRUE;
+    }
+    if (!(n%2) || n < 2) {
+        return FALSE;
+    }
+
+    sqrt_n = sqrt(n)
+    for (i=3; i<sqrt_n; i+=2) {
+        if (!(n%i)) {
+            return FALSE;
+        }
+    }
+}
+
+int prime_sum(int n) {
+    int smallest_prime;
+    int sqrt_n = sqrt(n)
+
+    for (smallest_prime=2; smallest_prime<sqrt_n; smallest_prime+=2) {
+        if (!(n%smallest_prime) && is_prime(smallest_prime)) {
+            break;
+        }
+    }
+
+    return smallest_prime + prime_sum(n/smallest_prime);
+}
+int main() {
+    int n;
+    printf("The prime disassembly sum of %d is %d", n, prime_sum(n));
+    return 0;
+}
+
