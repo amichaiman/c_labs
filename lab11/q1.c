@@ -21,6 +21,8 @@ int is_prime(int n) {
             return FALSE;
         }
     }
+
+    return TRUE;
 }
 
 int get_smallest_prime(int n) {
